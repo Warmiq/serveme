@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "sourceMap": true,
+        "strict": true,    
+        "outDir": "dist/"
+    },
+    "include": [
+        "server.ts"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}
