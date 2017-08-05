@@ -3,7 +3,7 @@
         "module": "commonjs",
         "sourceMap": true,
         "strict": true,    
-        "outDir": "dist/"
+        "outDir": "../dist/"
     },
     "include": [
         "server.ts",

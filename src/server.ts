@@ -1,6 +1,6 @@
 import * as express from "express";
 import * as path from "path";
-import { Recipe } from "./src/model/recipe";
+import { Recipe } from "./model/recipe";
 
 const port = process.env.port || 9000;
 
