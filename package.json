@@ -4,8 +4,8 @@
   "description": "Playground",
   "main": "index.js",
   "scripts": {
-    "build": "./node_modules/.bin/tsc -p src",
-    "test": "./node_modules/.bin/mocha dist/src/test --recursive"
+    "build": "./node_modules/.bin/tsc -p src --listFiles",
+    "test": "./node_modules/.bin/mocha dist/test --recursive"
   },
   "repository": {
     "type": "git",

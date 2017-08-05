@@ -7,7 +7,7 @@
     },
     "include": [
         "server.ts",
-        "src/test/test.ts"
+        "test/test.ts"
     ],
     "exclude": [
         "node_modules"
