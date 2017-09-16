@@ -1,3 +1,4 @@
+import { Season } from './season';
 import { Ingredient } from "./ingredient";
 
 export interface Recipe {
@@ -5,5 +6,5 @@ export interface Recipe {
     code: string;
     description: string;
     ingredients: Ingredient[];
-    price: number;
+    season: Season;
 }
