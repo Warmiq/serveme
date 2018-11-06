@@ -1,10 +1,14 @@
 import { Season } from './season';
 import { Ingredient } from "./ingredient";
 
-export interface Recipe {
-    name: string;
-    code: string;
-    description: string;
-    ingredients: Ingredient[];
-    season: Season;
+
+export class Recipe {
+
+
+    constructor(public readonly name: string,
+        public readonly code: string,
+        // public readonly description: string,
+        // public ingredients: Ingredient[],
+        // public readonly season: Season
+        ) { }
 }

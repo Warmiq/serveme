@@ -1,25 +1,28 @@
-import { getRecipe, getRecipesBySeason } from '../services/recipe-reader';
+import { MongoRecipeReader } from '../services/recipe-mongo-reader';
 
 import { Response, Request } from "express";
 import { Season } from "../model/season";
+import { Recipe } from '../model/recipe';
+
+const mongoUrl = "muhahahaha";
 
 export const getRecipeResponse: (request: Request, response: Response) => void =
-    (request, response) => {
-        response.setHeader('Content-Type', 'application/json');
+    async (request, response) => {
 
-        const recipe = getRecipe("testietest");
+        const recipeId = request.params.recipeId
+        const recipe = await new MongoRecipeReader(mongoUrl).saveRecipe(new Recipe(recipeId, recipeId));
         const json = JSON.stringify(recipe);
         response.send(json);
     }
 
 export const handleRecipesBySeason: (request: Request, response: Response) => void =
-    (request, response) => {
+    async (request, response) => {
         try {
-            const season = request.params.season.toLowerCase();
+            const season = request.params.season.toUpperCase();
 
             if (season in Season) {
-                const responseRecipes = getRecipesBySeason(season);
-                response.status(200).json(responseRecipes);
+                const responseRecipes = await new MongoRecipeReader(mongoUrl).getRecipesBySeason(season);
+                response.status(200).json(responseRecipes); 
             }
 
             throw new TypeError(`Unrecoginsed season ${season}. Possbile values are - ${Object.keys(Season).map(season => `${season.replace(",", " ")}`)}`);

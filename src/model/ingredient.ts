@@ -1,20 +1,14 @@
 import { Unit } from './unit';
 
-export interface Ingredient {
-    name: string;
-    description: string;
-    code: string;
-    pricePerUnit: string;
-    unit: Unit;
-    quantity: number;
-}
+export class Ingredient implements Ingredient {
 
-export const ingredientFactory: (name: string, description: string, code: string, pricePerUnit: string, quantity: number, unit: Unit) => Ingredient =
-    (name, description, code, pricePerUnit, quantity, unit) => ({
-        name,
-        description,
-        code,
-        pricePerUnit,
-        quantity,
-        unit
-    });
+    constructor(
+        public readonly name: string,
+        public readonly description: string,
+        public readonly code: string,
+
+        public readonly quantity: number,
+        public readonly unit: Unit) {
+
+    }
+}

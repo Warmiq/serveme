@@ -1,10 +1,9 @@
-import { getRecipesBySeason } from './services/recipe-reader';
-import { getRecipeResponse, handleRecipesBySeason } from './controllers/recipe-controller';
-import { Season } from './model/season';
 import * as express from 'express';
 import * as path from 'path';
 import * as bodyParser from "body-parser";
-import { Recipe } from "./model/recipe";
+
+import { getRecipeResponse, handleRecipesBySeason } from './controllers/recipe-controller';
+
 
 const port = process.env.port || 9000;
 

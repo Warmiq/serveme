@@ -1,5 +1,5 @@
 export enum Unit {
     ml = "mililiter",
-    g = "grams",
-    pieces = ""
+    grams = "grams",
+    tablespoons = "tbsp"
 }
